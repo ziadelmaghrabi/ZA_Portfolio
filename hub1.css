@@ -95,8 +95,34 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
 
 /* SKILLS */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 20px; }
-.skill-card { background: #1a1a1a; padding: 20px; border-radius: 8px; transition: 0.3s; }
-.skill-card:hover { transform: translateY(-5px); background: #4fc3f7; color: #111; }
+/* كروت المهارات بخط متدرج أزرق-أخضر */
+.skill-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+    transition: 0.3s;
+    color: #fff;
+    z-index: 0;
+}
+
+/* إنشاء خط متدرج حول الكارت */
+.skill-card::before {
+    content: "";
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: 14px; /* أكبر شويه من الكارت */
+    background: linear-gradient(45deg, #4fc3f7, #4fffa3); /* أزرق للأخضر */
+    z-index: -1;
+}
+
+/* Hover effect */
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: #4fc3f7;
+    color: #111;
+    box-shadow: 0 4px 20px rgba(79, 243, 163, 0.4);
+}
 
  
 /* PROJECTS */ 
@@ -171,6 +197,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
