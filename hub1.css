@@ -99,7 +99,7 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
 .skill-card:hover { transform: translateY(-5px); background: #4fc3f7; color: #111; }
 
  
-//* PROJECTS */
+/* PROJECTS */
 .projects-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
@@ -111,8 +111,14 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
     padding: 25px;
     border-radius: 12px;
     background: #1a1a1a;
-    transition: 0.3s;
     overflow: hidden;
+    transition: 0.3s;
+}
+
+/* نخلي كل محتوى الكارت فوق */
+.project-card *{
+    position: relative;
+    z-index: 2;
 }
 
 /* الخط المتحرك */
@@ -121,43 +127,30 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
     position: absolute;
     inset: -2px;
     border-radius: 12px;
-    background: linear-gradient(
-        120deg,
-        #4fc3f7,
-        #00e5ff,
-        #00ffcc,
-        #4fc3f7
-    );
+    background: linear-gradient(120deg,#4fc3f7,#00ffff,#00ffcc,#4fc3f7);
     background-size: 300% 300%;
-    animation: borderGlow 4s linear infinite;
-    z-index: -1;
+    animation: borderMove 4s linear infinite;
+    z-index: 0;
 }
 
-/* طبقة الخلفية */
+/* خلفية الكارت */
 .project-card::after{
     content: "";
     position: absolute;
     inset: 3px;
     background: #1a1a1a;
     border-radius: 10px;
-    z-index: -1;
+    z-index: 1;
 }
 
-@keyframes borderGlow{
-    0%{
-        background-position: 0% 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
+@keyframes borderMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
-/* hover */
 .project-card:hover{
-    transform: translateY(-10px) scale(1.03);
+    transform: translateY(-8px) scale(1.03);
 }
 /* EDUCATION & TRAINING */
 .edu-card, .train-card { background: #1a1a1a; padding: 25px; border-radius: 10px; margin: auto; max-width: 600px; }
@@ -219,6 +212,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
