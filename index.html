@@ -1,89 +1,100 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ziad Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ziad Portfolio</title>
+<link rel="stylesheet" href="hub1.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <h2 class="logo">Ziad Ayman</h2>
-    <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2 class="logo">Ziad Ayman</h2>
+  <ul>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Ziad Ayman</h1>
-      <h3>Full Stack .NET Developer</h3>
-      <p>Computer Science student passionate about building responsive and functional web applications.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn">Contact Me</a>
-        <a href="#" class="btn-outline">Download CV</a>
-      </div>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Ziad Ayman</h1>
+    <h3>Full Stack .NET Developer</h3>
+    <p>Computer Science student passionate about building responsive and functional web applications.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn">Contact Me</a>
+      <a href="#" class="btn-outline">Download CV</a>
     </div>
-    <img src="ph4.jpg" alt="Ziad Ayman" class="hero-img">
-  </section>
+  </div>
+  <img src="ph4.jpg" alt="Ziad Ayman" class="hero-img">
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about-section">
-    <div class="about-container">
-      <img src="myphoto.jpeg" alt="About Image" class="about-img">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p id="typing-text">
-          I am a third-year Computer Science student specializing in Software and Web Development. I have experience in front-end technologies (HTML, CSS, JavaScript, React) and back-end development using C# and SQL. I enjoy building clean, responsive, and functional web applications while continuously learning new technologies to improve my skills.
-        </p>
-      </div>
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <img src="myphoto.jpeg" alt="About Image" class="about-img">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p id="typing-text">
+        I am a third-year Computer Science student specializing in Software and Web Development. I have experience in front-end technologies (HTML, CSS, JavaScript, React) and back-end development using C# and SQL. I enjoy building clean, responsive, and functional web applications while continuously learning new technologies to improve my skills.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="skills-section">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card" data-skill="C#">C#</div>
-      <div class="skill-card" data-skill="JavaScript">JavaScript</div>
-      <div class="skill-card" data-skill="HTML/CSS">HTML/CSS</div>
-      <div class="skill-card" data-skill="React">React</div>
-      <div class="skill-card" data-skill="C++">C++</div>
-      <div class="skill-card" data-skill="Python">Python</div>
-      <div class="skill-card" data-skill="SQL">SQL</div>
+<!-- SKILLS -->
+<section id="skills" class="skills-section">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card" data-skill="C#">C#</div>
+    <div class="skill-card" data-skill="JavaScript">JavaScript</div>
+    <div class="skill-card" data-skill="HTML/CSS">HTML/CSS</div>
+    <div class="skill-card" data-skill="React">React</div>
+    <div class="skill-card" data-skill="C++">C++</div>
+    <div class="skill-card" data-skill="Python">Python</div>
+    <div class="skill-card" data-skill="SQL">SQL</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects-section">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    
+    <div class="project-card">
+      <h3>Python River Crossing AI</h3>
+      <p>Python application solving the classic river crossing problem using BFS, DFS, and A* algorithms. Includes Tkinter GUI for visualization.</p>
+      <a href="https://github.com/ziadelmaghrabi/Farmer-Crossing-Ai" target="_blank" class="btn-outline">View on GitHub</a>
     </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="projects-section">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Bank System</h3>
-        <p>Web app simulating banking operations using HTML, CSS, JS, React and .NET.</p>
-      </div>
-      <div class="project-card">
-        <h3>Library Shop</h3>
-        <p>Dynamic modular library/shop with responsive design, reusable components, hover effects and smooth transitions.</p>
-      </div>
+    <div class="project-card">
+      <h3>Bank System</h3>
+      <p>Web app simulating banking operations such as account creation, deposits, withdrawals, and transfers using HTML, CSS, JS, React, and .NET.</p>
+      <a href="#" class="btn-outline">View Project</a>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p><strong>Email:</strong> <a href="mailto:ziad23016042@gmail.com">ziad23016042@gmail.com</a></p>
-    <p><strong>Phone:</strong> <a href="tel:01021577363">01021577363</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zeyad-ayman-077890298/">ziad_ayman</a></p>
-  </section>
+    <div class="project-card">
+      <h3>Library/Shop Section</h3>
+      <p>Dynamic modular Library/Shop section with responsive layout, reusable components, hover effects, and smooth transitions using CSS Grid/Flexbox and JavaScript/React.</p>
+      <a href="#" class="btn-outline">View Project</a>
+    </div>
 
-  <script src="script.js"></script>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p><strong>Email:</strong> <a href="mailto:ziad23016042@gmail.com">ziad23016042@gmail.com</a></p>
+  <p><strong>Phone:</strong> <a href="tel:01021577363">01021577363</a></p>
+  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zeyad-ayman-077890298/">ziad_ayman</a></p>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
