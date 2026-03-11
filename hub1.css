@@ -186,7 +186,7 @@ footer { background: #111; text-align: center; padding: 20px; }
     .hero-img { 
         width: 150px; 
         max-width: 40%; 
-        margin-top: -20px; /* يرفع الصورة شويه فوق */
+        margin-top: -10px; /* يرفع الصورة شويه فوق */
     }
     .hero-text { max-width: 50%; }
    
@@ -197,6 +197,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
