@@ -61,7 +61,7 @@ body {
   align-items: center;
   padding: 150px 80px 100px 80px;
   gap: 50px;
-  flex-wrap: wrap; /* يخلي الصورة فوق النصوص على الموبايل */
+  flex-wrap: wrap;
 }
 .hero-text {
   max-width: 600px;
@@ -171,9 +171,7 @@ h2 {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 0 30px #4fc3f7;
 }
-.skill-card:hover::after {
-  opacity: 1;
-}
+.skill-card:hover::after { opacity: 1; }
 
 /* ================= PROJECTS ================= */
 .projects-grid {
@@ -193,20 +191,6 @@ h2 {
   box-shadow: 0 0 40px #4fc3f7;
 }
 
-/* ================= EDUCATION & TRAINING ================= */
-.edu-card, .train-card {
-  background: #1a1a1a;
-  padding: 25px;
-  border-radius: 10px;
-  margin: auto;
-  max-width: 600px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.edu-card:hover, .train-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px #4fc3f7;
-}
-
 /* ================= CONTACT ================= */
 .contact a {
   color: #4fc3f7;
@@ -221,14 +205,6 @@ h2 {
   box-shadow: 0 8px 40px #4fc3f7;
   background-color: #4fc3f7;
   color: #111;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  background: #111;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
 }
 
 /* ================= RESPONSIVE ================= */
