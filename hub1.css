@@ -16,25 +16,56 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 80px;
-    background: #111;
+    background: rgba(17,17,17,0.95); /* شبه شفافية مع blur */
+    backdrop-filter: blur(8px);      /* glass effect */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* ظل خفيف */
+    transition: background 0.3s;
 }
+
+/* Hover effect for navbar background */
+.navbar:hover {
+    background: rgba(24,24,24,0.95);
+}
+
 .navbar ul {
     display: flex;
     list-style: none;
     gap: 25px;
 }
+
 .navbar a {
     text-decoration: none;
     color: #4fc3f7;
     font-weight: 500;
+    position: relative;
     transition: 0.3s;
 }
-.navbar a.active, .navbar a:hover {
+
+/* Underline animation */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: #4fc3f7;
+    transition: width 0.3s ease;
+}
+
+/* On hover or active */
+.navbar a:hover::after, .navbar a.active::after {
+    width: 100%;
+}
+
+/* Glow effect on hover */
+.navbar a:hover {
     color: #81d4fa;
+    text-shadow: 0 0 8px #4fc3f7, 0 0 16px #81d4fa;
 }
 
 /* HERO */
@@ -170,5 +201,6 @@ footer { background:#111; text-align:center; padding:20px; }
     .hero-img { width: 200px; }
     section { padding:80px 20px; }
 }
+
 
 
