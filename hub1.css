@@ -88,6 +88,41 @@ body {
 .btn-outline { border: 2px solid #4fc3f7; color: #4fc3f7; }
 .btn:hover { background: #81d4fa; transform: translateY(-3px); }
 .btn-outline:hover { background: #4fc3f7; color: #111; transform: translateY(-3px); }
+/* حاوية الصورة والزر */
+.hero-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* مسافة بين الصورة والزر */
+}
+
+/* زر GitHub */
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px; /* مسافة بين الأيقونة والنص */
+    padding: 12px 28px;
+    border-radius: 12px;
+    background: #333; /* لون داكن للزر */
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.btn-github:hover {
+    background: #4fc3f7; /* أزرق فاتح عند Hover */
+    color: #111;
+    transform: translateY(-3px);
+}
+
+/* أيقونة GitHub أكبر */
+.github-icon {
+    width: 28px;
+    height: 28px;
+}
 
 /* SECTIONS */
 section { padding: 100px 80px; text-align: center; }
@@ -205,6 +240,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
