@@ -42,28 +42,80 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 150px 80px 100px 80px;
+    padding: 120px 80px;
+    gap: 60px;
 }
+
+/* TEXT */
 .hero-text {
-    max-width: 500px;
+    max-width: 520px;
 }
+
+.hero-text h1{
+    font-size: 56px;
+    margin-bottom: 15px;
+}
+
+.hero-text h2{
+    color: #4fc3f7;
+    margin-bottom: 20px;
+}
+
+.hero-text p{
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* IMAGE */
 .hero-img {
     width: 320px;
     border-radius: 50%;
     box-shadow: 0 0 40px #4fc3f7;
+    transition: 0.4s;
 }
-/* Buttons */
+
+.hero-img:hover{
+    transform: scale(1.05);
+}
+
+/* BUTTONS */
+.buttons{
+    display: flex;
+    gap: 15px;
+}
+
 .btn, .btn-outline {
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 28px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
-    margin-right: 10px;
+    font-weight: 600;
+    transition: 0.3s;
 }
-.btn { background: #4fc3f7; color: #111; }
-.btn-outline { border: 2px solid #4fc3f7; color: #4fc3f7; }
-.btn:hover { background: #81d4fa; }
-.btn-outline:hover { background: #4fc3f7; color: #111; }
+
+/* primary button */
+.btn { 
+    background: #4fc3f7; 
+    color: #111; 
+}
+
+/* outline button */
+.btn-outline { 
+    border: 2px solid #4fc3f7; 
+    color: #4fc3f7; 
+}
+
+/* hover */
+.btn:hover { 
+    background: #81d4fa;
+    transform: translateY(-3px);
+}
+
+.btn-outline:hover { 
+    background: #4fc3f7; 
+    color: #111; 
+    transform: translateY(-3px);
+}
 
 /* SECTIONS */
 section { padding: 100px 80px; text-align: center; }
@@ -113,3 +165,4 @@ footer { background:#111; text-align:center; padding:20px; }
     .hero-img { width: 200px; }
     section { padding:80px 20px; }
 }
+
