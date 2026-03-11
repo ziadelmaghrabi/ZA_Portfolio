@@ -47,8 +47,8 @@ body {
   height: 2px;
   left: 0;
   bottom: -4px;
-  background: #4fc3f7;
-  transition: 0.3s;
+  background-color: #4fc3f7;
+  transition: width 0.3s;
 }
 .navbar a:hover::after, .navbar a.active::after {
   width: 100%;
@@ -60,7 +60,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 150px 80px 100px 80px;
-  position: relative;
+  gap: 50px;
+  flex-wrap: wrap; /* يخلي الصورة فوق النصوص على الموبايل */
+}
+.hero-text {
+  max-width: 600px;
 }
 .hero-text h1 {
   font-size: 3.5rem;
@@ -68,6 +72,10 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientMove 3s infinite linear;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 .hero-text h3 {
   font-size: 1.5rem;
@@ -97,8 +105,12 @@ body {
   width: 320px;
   border-radius: 50%;
   box-shadow: 0 0 40px #4fc3f7;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+}
+.hero-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px #4fc3f7;
 }
 
 /* ================= SECTIONS ================= */
@@ -155,6 +167,10 @@ h2 {
   opacity: 0;
   transition: 0.3s;
 }
+.skill-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 30px #4fc3f7;
+}
 .skill-card:hover::after {
   opacity: 1;
 }
@@ -195,9 +211,16 @@ h2 {
 .contact a {
   color: #4fc3f7;
   text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s;
 }
 .contact a:hover {
-  text-decoration: underline;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 40px #4fc3f7;
+  background-color: #4fc3f7;
+  color: #111;
 }
 
 /* ================= FOOTER ================= */
@@ -208,18 +231,14 @@ footer {
   margin-top: 50px;
 }
 
-/* ================= LIGHT/DARK MODE ================= */
-body.light-mode { background:#f0f0f0; color:#111; }
-body.light-mode .navbar { background: rgba(255,255,255,0.85); }
-body.light-mode .navbar a { color:#0d47a1; }
-body.light-mode .navbar a.active::after, body.light-mode .navbar a:hover::after { background:#0d47a1; }
-body.light-mode .hero-text h1,h2 { background: linear-gradient(90deg,#0d47a1,#1976d2); -webkit-background-clip:text;-webkit-text-fill-color:transparent; }
-body.light-mode .skill-card { background:#e0e0e0; color:#111; }
-body.light-mode .project-card, body.light-mode .edu-card, body.light-mode .train-card { background:#e0e0e0; color:#111; }
-
 /* ================= RESPONSIVE ================= */
 @media screen and (max-width:768px){
-  .hero { flex-direction: column; padding:120px 20px; gap:30px; }
+  .hero {
+    flex-direction: column;
+    padding: 120px 20px;
+    gap: 30px;
+  }
   .hero-img { width: 200px; }
-  section { padding:80px 20px; }
+  section { padding: 80px 20px; }
+  .skills-grid { grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); }
 }
