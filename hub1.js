@@ -1,4 +1,4 @@
- // ================= Smooth Scroll =================
+// ================= Smooth Scroll =================
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const target = document.querySelector(link.getAttribute("href"));
@@ -12,10 +12,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 // ================= Typing Effect =================
-const text = "My name is Ziad Ayman Abdalla Elmaghraby, and I am a passionate Full-Stack Developer with strong skills in Front-End development, including HTML, CSS, JavaScript, and React. I also have experience in Back-End development using C# and SQL, allowing me to build complete and functional web applications. I enjoy building clean, responsive, and user-friendly interfaces, while also working on server-side logic and database management.";
+const text = "I am a third-year Computer Science student specializing in Software and Web Development. I have experience in front-end technologies (HTML, CSS, JavaScript, React) and back-end development using C# and SQL. I enjoy building clean, responsive, and functional web applications while continuously learning new technologies to improve my skills.";
 let i = 0;
 const typingText = document.getElementById("typing-text");
-const aboutSection = document.querySelector(".about-container");
 let started = false;
 
 function type() {
@@ -27,6 +26,7 @@ function type() {
 }
 
 // Desktop: start typing on hover
+const aboutSection = document.querySelector(".about-container");
 aboutSection.addEventListener("mouseenter", () => {
   if(!started && window.innerWidth > 768){
     started = true;
