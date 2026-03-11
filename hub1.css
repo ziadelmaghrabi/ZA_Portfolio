@@ -98,14 +98,58 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
 .skill-card { background: #1a1a1a; padding: 20px; border-radius: 8px; transition: 0.3s; }
 .skill-card:hover { transform: translateY(-5px); background: #4fc3f7; color: #111; }
 
+ 
 /* PROJECTS */
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 30px; }
-.project-card { background: #1a1a1a; padding: 25px; border-radius: 10px; transition: 0.3s; }
-.project-card p {
-    margin-bottom: 20px;  
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 30px;
 }
 
-.project-card:hover { transform: scale(1.05); box-shadow: 0 0 30px #4fc3f7; }
+.project-card {
+    position: relative;
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 10px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.project-card p {
+    margin-bottom: 20px;
+}
+
+/* الخط المتحرك */
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg,#4fc3f7,#00ffff,#4fc3f7);
+    z-index: -1;
+    animation: borderMove 4s linear infinite;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+/* الحركة */
+@keyframes borderMove {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
 
 /* EDUCATION & TRAINING */
 .edu-card, .train-card { background: #1a1a1a; padding: 25px; border-radius: 10px; margin: auto; max-width: 600px; }
@@ -167,6 +211,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
