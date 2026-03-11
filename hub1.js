@@ -26,11 +26,11 @@ window.addEventListener("scroll", ()=>{
 
 // Typing Effect (About)
 const typingText = document.getElementById("typing-text");
-const text = `I am Ziad Ayman, a passionate Computer Science student and Full Stack .NET Developer.
-I specialize in building scalable and responsive web applications with modern technologies.
-On the front-end, I create interactive interfaces using HTML, CSS, JavaScript, and React.
-On the back-end, I develop robust solutions with C#, ASP.NET, and SQL.
-I enjoy learning new technologies, solving complex problems, and contributing to impactful projects.`;
+const text = `👋 Hi, I am Ziad Ayman, a passionate Computer Science student and Full Stack .NET Developer.
+💻 I specialize in building scalable and responsive web applications with modern technologies.
+🎨 On the front-end, I create interactive interfaces using HTML, CSS, JavaScript, and React.
+⚙️ On the back-end, I develop robust solutions with C#, ASP.NET, and SQL.
+🚀 I enjoy learning new technologies, solving complex problems, and contributing to impactful projects.`;
 let i = 0;
 function typeEffect(){
     if(i < text.length){
@@ -111,3 +111,4 @@ document.querySelectorAll(".skill-card, .project-card").forEach(el=>{
 const menuToggle = document.querySelector(".menu-toggle");
 const navUl = document.querySelector(".navbar ul");
 menuToggle.addEventListener("click", ()=>{ navUl.classList.toggle("active"); });
+
