@@ -31,14 +31,23 @@ const text = `👋 Hi, I am Ziad Ayman, a passionate Computer Science student an
 🎨 On the front-end, I create interactive interfaces using HTML, CSS, JavaScript, and React.<br>
 ⚙️ On the back-end, I develop robust solutions with C#, ASP.NET, and SQL.<br>
 🚀 I enjoy learning new technologies, solving complex problems, and contributing to impactful projects.`;
+
 let i = 0;
-function typeEffect(){
-    if(i < text.length){
-        typingText.innerHTML += text.charAt(i); // بدل textContent
-        i++;
+function typeEffect() {
+    if (i < text.length) {
+        // لو بداية <br> ضيفها مرة واحدة بدل تفكيكها
+        if (text.substr(i, 4) === "<br>") {
+            typingText.innerHTML += "<br>";
+            i += 4; // نعدي على 4 أحرف
+        } else {
+            typingText.innerHTML += text.charAt(i);
+            i++;
+        }
         setTimeout(typeEffect, 25);
     }
 }
+
+window.addEventListener("load", typeEffect);
 }
 window.addEventListener("load", typeEffect);
 
@@ -112,5 +121,6 @@ document.querySelectorAll(".skill-card, .project-card").forEach(el=>{
 const menuToggle = document.querySelector(".menu-toggle");
 const navUl = document.querySelector(".navbar ul");
 menuToggle.addEventListener("click", ()=>{ navUl.classList.toggle("active"); });
+
 
 
