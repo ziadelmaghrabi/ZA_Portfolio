@@ -95,48 +95,38 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
 
 /* SKILLS */
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 20px; }
-/* بطاقة المهارة مع خط متحرك */
+/* البطاقة */
 .skill-card {
-    background: #1a1a1a; /* لون الكارت ثابت */
+    background: #1a1a1a;
     padding: 20px;
     border-radius: 12px;
     position: relative;
     color: #fff;
+    overflow: hidden; /* عشان الخط يبقى داخل البطاقة */
     z-index: 0;
-    overflow: hidden; /* عشان الـ pseudo-element ما يطلعش برا */
 }
 
-/* الخط المتحرك */
+/* الخط المتحرك حول البطاقة */
 .skill-card::before {
     content: "";
     position: absolute;
-    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
     border-radius: 14px;
     padding: 2px;
-    background: conic-gradient(from 0deg, #4fc3f7, #4fffa3, #4fc3f7);
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor; 
-            mask-composite: exclude;
-    mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
+    background: linear-gradient(90deg, #4fc3f7, #4fffa3, #4fc3f7); /* لون الخط متدرج */
+    background-size: 200% 200%; /* لتكبير مساحة التحريك */
     z-index: -1;
-    animation: rotateBorder 5s linear infinite; /* حركة بطيئة */
+    animation: moveBorder 6s linear infinite; /* حركة بطيئة */
 }
 
-/* حركة الخط */
-@keyframes rotateBorder {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Hover effect للكارت */
-.skill-card:hover {
-    transform: translateY(-5px);
-    background: #1a1a1a; /* يبقى ثابت */
-    color: #fff;
+/* تحريك الخط */
+@keyframes moveBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
  
 /* PROJECTS */ 
@@ -211,6 +201,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
