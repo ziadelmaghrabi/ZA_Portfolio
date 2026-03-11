@@ -4,6 +4,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
         e.preventDefault();
         const target = document.querySelector(link.getAttribute("href"));
         window.scrollTo({ top: target.offsetTop - 80, behavior:"smooth" });
+        // close menu on mobile
+        document.querySelector(".navbar ul").classList.remove("active");
     });
 });
 
@@ -16,7 +18,8 @@ window.addEventListener("scroll", ()=>{
         const sectionTop = section.offsetTop - 120;
         if(pageYOffset >= sectionTop) current = section.getAttribute("id");
     });
-    navLinks.forEach(link=>{ link.classList.remove("active");
+    navLinks.forEach(link=>{
+        link.classList.remove("active");
         if(link.getAttribute("href")==="#"+current) link.classList.add("active");
     });
 });
@@ -37,15 +40,17 @@ function typeEffect(){
 }
 window.addEventListener("load", typeEffect);
 
-// Hero Image 3D Effect
+// Hero Image 3D Effect (Desktop Only)
 const heroImg = document.querySelector(".hero-img");
-heroImg.addEventListener("mousemove", e=>{
-    const rect = heroImg.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width/2;
-    const y = e.clientY - rect.top - rect.height/2;
-    heroImg.style.transform = `rotateY(${x/20}deg) rotateX(${-y/20}deg) scale(1.05)`;
-});
-heroImg.addEventListener("mouseleave", ()=>{ heroImg.style.transform="rotateY(0) rotateX(0) scale(1)"; });
+if(window.innerWidth>768){
+    heroImg.addEventListener("mousemove", e=>{
+        const rect = heroImg.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width/2;
+        const y = e.clientY - rect.top - rect.height/2;
+        heroImg.style.transform = `rotateY(${x/20}deg) rotateX(${-y/20}deg) scale(1.05)`;
+    });
+    heroImg.addEventListener("mouseleave", ()=>{ heroImg.style.transform="rotateY(0) rotateX(0) scale(1)"; });
+}
 
 // Scroll Reveal Animation
 const revealElements = document.querySelectorAll(".skill-card,.project-card,.edu-card,.train-card");
@@ -64,17 +69,35 @@ revealElements.forEach(el=>{
     revealObserver.observe(el);
 });
 
-// Skill & Project Hover Effects
-document.querySelectorAll(".skill-card").forEach(skill=>{
-    skill.addEventListener("mouseenter",()=>{ skill.style.boxShadow="0 0 20px #4fc3f7"; });
-    skill.addEventListener("mouseleave",()=>{ skill.style.boxShadow="none"; });
+// Skill & Project Touch Effects (Mobile) & Hover Effects (Desktop)
+document.querySelectorAll(".skill-card, .project-card").forEach(el=>{
+    if(window.innerWidth <= 768){
+        el.addEventListener("touchstart", ()=>{
+            el.style.transform="scale(1.03)";
+            el.style.boxShadow="0 0 20px #4fc3f7";
+        });
+        el.addEventListener("touchend", ()=>{
+            el.style.transform="scale(1)";
+            el.style.boxShadow="none";
+        });
+    } else {
+        // Desktop hover effects
+        if(el.classList.contains("skill-card")){
+            el.addEventListener("mouseenter",()=>{ el.style.boxShadow="0 0 20px #4fc3f7"; });
+            el.addEventListener("mouseleave",()=>{ el.style.boxShadow="none"; });
+        } else {
+            el.addEventListener("mousemove", e=>{
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width/2;
+                const y = e.clientY - rect.top - rect.height/2;
+                el.style.transform=`rotateY(${x/25}deg) rotateX(${-y/25}deg) scale(1.03)`;
+            });
+            el.addEventListener("mouseleave",()=>{ el.style.transform="rotateY(0) rotateX(0) scale(1)"; });
+        }
+    }
 });
-document.querySelectorAll(".project-card").forEach(card=>{
-    card.addEventListener("mousemove", e=>{
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width/2;
-        const y = e.clientY - rect.top - rect.height/2;
-        card.style.transform=`rotateY(${x/25}deg) rotateX(${-y/25}deg) scale(1.03)`;
-    });
-    card.addEventListener("mouseleave",()=>{ card.style.transform="rotateY(0) rotateX(0) scale(1)"; });
-});
+
+// Navbar menu toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const navUl = document.querySelector(".navbar ul");
+menuToggle.addEventListener("click", ()=>{ navUl.classList.toggle("active"); });
