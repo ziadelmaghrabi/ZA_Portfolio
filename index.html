@@ -1,6 +1,5 @@
  <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +7,16 @@
 <link rel="stylesheet" href="hub1.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
+<!-- LIGHT/DARK TOGGLE -->
+<div class="mode-toggle">🌙</div>
 
 <!-- NAVBAR -->
 <nav class="navbar">
     <h2 class="logo">ZA</h2>
     <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -30,7 +31,7 @@
     <div class="hero-text">
         <h1>Ziad Ayman</h1>
         <h3>Full Stack .NET Developer</h3>
-        <p>Computer Science student passionate about modern web technologies and building real-world solutions.</p>
+        <p>Computer Science student passionate about building responsive and functional web applications.</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn">Contact Me</a>
             <a href="#" class="btn-outline">Download CV</a>
@@ -49,16 +50,16 @@
 <section id="skills" class="skills">
     <h2>Technical Skills</h2>
     <div class="skills-grid">
-        <div class="skill-card">C#</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">HTML</div>
-        <div class="skill-card">CSS</div>
-        <div class="skill-card">React</div>
-        <div class="skill-card">.NET</div>
-        <div class="skill-card">SQL</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">C++</div>
-        <div class="skill-card">Git & GitHub</div>
+        <div class="skill-card" data-skill="95%">C#</div>
+        <div class="skill-card" data-skill="90%">JavaScript</div>
+        <div class="skill-card" data-skill="90%">HTML</div>
+        <div class="skill-card" data-skill="90%">CSS</div>
+        <div class="skill-card" data-skill="85%">React</div>
+        <div class="skill-card" data-skill="80%">.NET</div>
+        <div class="skill-card" data-skill="75%">SQL</div>
+        <div class="skill-card" data-skill="80%">Python</div>
+        <div class="skill-card" data-skill="70%">C++</div>
+        <div class="skill-card" data-skill="70%">Git & GitHub</div>
     </div>
 </section>
 
@@ -72,7 +73,7 @@
         </div>
         <div class="project-card">
             <h3>Bank System</h3>
-            <p>Web application simulating banking operations like account creation, deposit, withdraw, and transfers using HTML, CSS, JavaScript, and React.</p>
+            <p>Web app simulating banking operations like account creation, deposit, withdrawal, and transfers using HTML, CSS, JS, and React.</p>
         </div>
     </div>
 </section>
