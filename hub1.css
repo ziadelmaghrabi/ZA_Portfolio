@@ -100,38 +100,33 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
 
  
 /* PROJECTS */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    gap: 30px;
-}
-
 .project-card {
     position: relative;
     padding: 25px;
     border-radius: 12px;
-    background: #1a1a1a;
+    background: #1a1a1a; /* لون المربع */
     overflow: hidden;
     transition: 0.3s;
+    z-index: 0; /* محتوى المربع فوق الخط */
 }
 
-/* كل محتوى الكارت فوق الخط */
 .project-card * {
     position: relative;
-    z-index: 2; /* النصوص + الزرار كلها فوق الخط */
+    z-index: 1; /* النصوص + الزرار فوق الخط */
 }
 
-/* الخط المتحرك حول الحواف فقط */
+/* الخط المتحرك حول المربع فقط */
 .project-card::before {
     content: "";
     position: absolute;
-    top: -2px; left: -2px; right: -2px; bottom: -2px;
-    border-radius: 12px;
-    padding: 2px; /* سماكة الخط */
+    top: -2px; left: -2px; right: -2px; bottom: -2px; /* حول المربع */
+    border-radius: 14px; /* أكبر من المربع عشان يظهر فوق الحواف */
+    padding: 2px;
     background: linear-gradient(120deg,#4fc3f7,#00ffff,#00ffcc,#4fc3f7);
     background-size: 300% 300%;
     animation: borderMove 4s linear infinite;
-    pointer-events: none; /* يسمح بالضغط على الزرار */
+    pointer-events: none;
+    z-index: 0; /* تحت المحتوى */
 }
 
 /* حركة التدرج */
@@ -154,7 +149,7 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
 /* الزرار */
 .project-card button {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     padding: 8px 15px;
     border: 1px solid #4fc3f7;
     border-radius: 5px;
@@ -228,6 +223,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
