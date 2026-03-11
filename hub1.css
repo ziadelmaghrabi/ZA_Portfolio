@@ -121,6 +121,18 @@ footer { background: #111; text-align: center; padding: 20px; }
 @media screen and (max-width:768px){
     /* Menu Toggle appears only on mobile */
     .menu-toggle { display: flex; }
+    .project-card {
+    padding: 20px 15px 40px 15px; /* زيادة المسافة السفلية */
+}
+
+.project-card p {
+    margin-bottom: 20px;   
+}
+
+.project-card a.btn-outline {
+    display: inline-block;   
+    margin-top: 10px;
+}
 
     /* Hide navbar links by default on mobile */
     .navbar ul {
@@ -155,4 +167,5 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
