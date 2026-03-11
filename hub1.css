@@ -227,8 +227,8 @@ footer { background: #111; text-align: center; padding: 20px; }
     }
     .hero-text { max-width: 50%; }
     .hero-img { 
-        width: 150px; 
-        max-width: 40%; 
+        width: 200px; 
+        max-width: 60%; 
         margin-top: -1px; /* يرفع الصورة شويه فوق */
     }
     .hero-text { max-width: 50%; }
@@ -240,6 +240,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
