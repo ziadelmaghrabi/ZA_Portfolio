@@ -1,120 +1,87 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ziad Ayman | Portfolio</title>
-<link rel="stylesheet" href="hub1.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ziad Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LIGHT/DARK TOGGLE -->
-<div class="mode-toggle">🌙</div>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-    <h2 class="logo">ZA</h2>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h2 class="logo">Ziad Ayman</h2>
     <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#training">Training</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-container">
+  <!-- HERO -->
+  <section id="home" class="hero">
     <div class="hero-text">
       <h1>Ziad Ayman</h1>
       <h3>Full Stack .NET Developer</h3>
       <p>Computer Science student passionate about building responsive and functional web applications.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn">Contact Me</a>
-        <a href="Ziad_CV.pdf" class="btn-outline" target="_blank">Download CV</a>
+        <a href="#" class="btn-outline">Download CV</a>
       </div>
     </div>
-    <div class="hero-image-wrapper">
-      <img src="ph4.jpg" alt="Ziad Ayman" class="hero-img">
+    <img src="ph4.jpg" alt="Ziad Ayman" class="hero-img">
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <img src="myphoto.jpeg" alt="About Image" class="about-img">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p id="typing-text"></p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ABOUT -->
-<section id="about" class="about">
-    <h2>About Me</h2>
-    <p id="typing-text"></p>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="skills">
-    <h2>Technical Skills</h2>
+  <!-- SKILLS -->
+  <section id="skills" class="skills-section">
+    <h2>Skills</h2>
     <div class="skills-grid">
-        <div class="skill-card" data-skill="95%">C#</div>
-        <div class="skill-card" data-skill="90%">JavaScript</div>
-        <div class="skill-card" data-skill="90%">HTML</div>
-        <div class="skill-card" data-skill="90%">CSS</div>
-        <div class="skill-card" data-skill="85%">React</div>
-        <div class="skill-card" data-skill="80%">.NET</div>
-        <div class="skill-card" data-skill="75%">SQL</div>
-        <div class="skill-card" data-skill="80%">Python</div>
-        <div class="skill-card" data-skill="70%">C++</div>
-        <div class="skill-card" data-skill="70%">Git & GitHub</div>
+      <div class="skill-card" data-skill="C#">C#</div>
+      <div class="skill-card" data-skill="JavaScript">JavaScript</div>
+      <div class="skill-card" data-skill="HTML/CSS">HTML/CSS</div>
+      <div class="skill-card" data-skill="React">React</div>
+      <div class="skill-card" data-skill="C++">C++</div>
+      <div class="skill-card" data-skill="Python">Python</div>
+      <div class="skill-card" data-skill="SQL">SQL</div>
     </div>
-</section>
+  </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="projects-section">
     <h2>Projects</h2>
     <div class="projects-grid">
-        <div class="project-card">
-            <h3>AI River Crossing</h3>
-            <p>Python application solving the Farmer–Wolf–Goat–Cabbage problem using BFS, DFS, and A* algorithms with a Tkinter GUI.</p>
-        </div>
-        <div class="project-card">
-            <h3>Bank System</h3>
-            <p>Web app simulating banking operations like account creation, deposit, withdrawal, and transfers using HTML, CSS, JS, and React.</p>
-        </div>
+      <div class="project-card">
+        <h3>Bank System</h3>
+        <p>Web app simulating banking operations using HTML, CSS, JS, React and .NET.</p>
+      </div>
+      <div class="project-card">
+        <h3>Library Shop</h3>
+        <p>Dynamic modular library/shop with responsive design, reusable components, hover effects and smooth transitions.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- EDUCATION -->
-<section id="education" class="education">
-    <h2>Education</h2>
-    <div class="edu-card">
-        <h3>Bachelor of Computer Science</h3>
-        <p>Faculty of Computers and Information – 6th of October University</p>
-        <p>2023 – 2027</p>
-    </div>
-</section>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p><strong>Email:</strong> <a href="mailto:ziad23016042@gmail.com">ziad23016042@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:01021577363">01021577363</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zeyad-ayman-077890298/">ziad_ayman</a></p>
+  </section>
 
-<!-- TRAINING -->
-<section id="training" class="training">
-    <h2>Training</h2>
-    <div class="train-card">
-        <h3>Digital Egypt Pioneers</h3>
-        <p>Full Stack .NET Training – learning ASP.NET, C#, SQL, and building real web applications.</p>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ziad23016042@gmail.com">ziad23016042@gmail.com</a></p>
-    <p>Phone: <a href="tel:01021577363">01021577363</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/zeyad-ayman-077890298/">Ziad Ayman</a></p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Ziad Ayman Portfolio</p>
-</footer>
-
-<script src="hub1.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
