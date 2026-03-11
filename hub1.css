@@ -1,163 +1,115 @@
- *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-font-family:'Poppins',sans-serif;
-background:#0f0f0f;
-color:white;
-
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    color: white;
 }
 
 /* NAVBAR */
-
-.navbar{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 80px;
-background:#111;
-position:fixed;
-width:100%;
-top:0;
-
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: #111;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
-
-.navbar ul{
-
-display:flex;
-list-style:none;
-gap:25px;
-
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
 }
-
-.navbar a{
-
-text-decoration:none;
-color:#4fc3f7;
-
+.navbar a {
+    text-decoration: none;
+    color: #4fc3f7;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.navbar a.active, .navbar a:hover {
+    color: #81d4fa;
 }
 
 /* HERO */
-
-.hero{
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:150px 80px;
-
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150px 80px 100px 80px;
 }
-
-.hero-text{
-
-max-width:500px;
-
+.hero-text {
+    max-width: 500px;
 }
-
-.hero-img{
-
-width:320px;
-border-radius:50%;
-box-shadow:0 0 40px #4fc3f7;
-
+.hero-img {
+    width: 320px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px #4fc3f7;
 }
-
-/* BUTTONS */
-
-.btn{
-
-background:#4fc3f7;
-padding:10px 20px;
-border-radius:6px;
-text-decoration:none;
-color:#111;
-font-weight:bold;
-
+/* Buttons */
+.btn, .btn-outline {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
 }
-
-.btn-outline{
-
-border:2px solid #4fc3f7;
-padding:10px 20px;
-border-radius:6px;
-text-decoration:none;
-color:#4fc3f7;
-
-}
+.btn { background: #4fc3f7; color: #111; }
+.btn-outline { border: 2px solid #4fc3f7; color: #4fc3f7; }
+.btn:hover { background: #81d4fa; }
+.btn-outline:hover { background: #4fc3f7; color: #111; }
 
 /* SECTIONS */
-
-section{
-
-padding:100px 80px;
-text-align:center;
-
-}
+section { padding: 100px 80px; text-align: center; }
+h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 /* SKILLS */
-
-.skills-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap: 20px;
 }
-
-.skill-card{
-
-background:#1a1a1a;
-padding:20px;
-border-radius:8px;
-transition:.3s;
-
+.skill-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
 }
-
-.skill-card:hover{
-
-transform:translateY(-5px);
-background:#4fc3f7;
-color:#111;
-
-}
+.skill-card:hover { transform: translateY(-5px); background:#4fc3f7; color:#111; }
 
 /* PROJECTS */
-
-.projects-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 30px;
 }
-
-.project-card{
-
-background:#1a1a1a;
-padding:25px;
-border-radius:10px;
-transition:.3s;
-
+.project-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
+.project-card:hover { transform: scale(1.05); box-shadow:0 0 30px #4fc3f7; }
 
-.project-card:hover{
+/* EDUCATION & TRAINING */
+.edu-card, .train-card { background: #1a1a1a; padding: 25px; border-radius: 10px; margin: auto; max-width: 600px; }
 
-transform:scale(1.05);
-box-shadow:0 0 30px #4fc3f7;
-
-}
+/* CONTACT */
+.contact a { color: #4fc3f7; text-decoration: none; }
+.contact a:hover { text-decoration: underline; }
 
 /* FOOTER */
+footer { background:#111; text-align:center; padding:20px; }
 
-footer{
-
-background:#111;
-text-align:center;
-padding:20px;
-
+/* RESPONSIVE */
+@media screen and (max-width:768px){
+    .hero { flex-direction: column; padding:120px 20px; gap:30px; }
+    .hero-img { width: 200px; }
+    section { padding:80px 20px; }
 }
