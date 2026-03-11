@@ -229,7 +229,7 @@ footer { background: #111; text-align: center; padding: 20px; }
     .hero-img { 
         width: 150px; /* حجم معقول على الموبايل */
         max-width: 50%;
-        margin-top: 0; /* الصورة في مستوى النص */
+        margin-top: 1; /* الصورة في مستوى النص */
     }
 
     /* مسافة بين الأزرار */
@@ -241,6 +241,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
