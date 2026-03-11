@@ -101,6 +101,10 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
 /* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 30px; }
 .project-card { background: #1a1a1a; padding: 25px; border-radius: 10px; transition: 0.3s; }
+.project-card p {
+    margin-bottom: 20px;  
+}
+
 .project-card:hover { transform: scale(1.05); box-shadow: 0 0 30px #4fc3f7; }
 
 /* EDUCATION & TRAINING */
@@ -151,3 +155,4 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
