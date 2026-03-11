@@ -78,7 +78,12 @@ body {
 .hero-img:hover{
     transform: scale(1.05);
 }
-
+.hero-buttons {
+    margin-top: 30px;  /* مسافة تحت النص */
+    display: flex;
+    gap: 15px;         /* مسافة بين الزرارين */
+    flex-wrap: wrap;   /* يظلوا مرتبّين على الموبايل */
+}
 /* BUTTONS */
 .buttons{
     display: flex;
@@ -165,4 +170,5 @@ footer { background:#111; text-align:center; padding:20px; }
     .hero-img { width: 200px; }
     section { padding:80px 20px; }
 }
+
 
