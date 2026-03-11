@@ -1,81 +1,225 @@
-  // Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
-    link.addEventListener("click", e=>{
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute("href"));
-        window.scrollTo({ top: target.offsetTop - 80, behavior:"smooth" });
-    });
-});
-
-// Navbar Active Link
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
-window.addEventListener("scroll", ()=>{
-    let current = "";
-    sections.forEach(section=>{
-        const sectionTop = section.offsetTop - 120;
-        if(pageYOffset >= sectionTop) current = section.getAttribute("id");
-    });
-    navLinks.forEach(link=>{ link.classList.remove("active");
-        if(link.getAttribute("href")==="#"+current) link.classList.add("active");
-    });
-});
-
-// Typing Effect (About)
-const typingText = document.getElementById("typing-text");
-const text = `I am a Computer Science student passionate about software development
-and modern web technologies. I specialize in building responsive front-end
-interfaces using HTML, CSS, JavaScript and React. I am also learning .NET
-and backend development using C# and SQL to create full-stack applications.`;
-let i = 0;
-function typeEffect(){
-    if(i<text.length){
-        typingText.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeEffect,25);
-    }
+ /* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-window.addEventListener("load", typeEffect);
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  scroll-behavior: smooth;
+}
 
-// Hero Image 3D Effect
-const heroImg = document.querySelector(".hero-img");
-heroImg.addEventListener("mousemove", e=>{
-    const rect = heroImg.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width/2;
-    const y = e.clientY - rect.top - rect.height/2;
-    heroImg.style.transform = `rotateY(${x/20}deg) rotateX(${-y/20}deg) scale(1.05)`;
-});
-heroImg.addEventListener("mouseleave", ()=>{ heroImg.style.transform="rotateY(0) rotateX(0) scale(1)"; });
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: rgba(24,24,24,0.85);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+.navbar h2.logo {
+  font-size: 1.8rem;
+  color: #4fc3f7;
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #4fc3f7;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+}
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #4fc3f7;
+  transition: 0.3s;
+}
+.navbar a:hover::after, .navbar a.active::after {
+  width: 100%;
+}
 
-// Scroll Reveal Animation
-const revealElements = document.querySelectorAll(".skill-card,.project-card,.edu-card,.train-card");
-const revealObserver = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.style.opacity="1";
-            entry.target.style.transform="translateY(0)";
-        }
-    });
-});
-revealElements.forEach(el=>{
-    el.style.opacity="0";
-    el.style.transform="translateY(40px)";
-    el.style.transition="0.6s";
-    revealObserver.observe(el);
-});
+/* ================= HERO ================= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 150px 80px 100px 80px;
+  position: relative;
+}
+.hero-text h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #4fc3f7, #81d4fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s infinite linear;
+}
+.hero-text h3 {
+  font-size: 1.5rem;
+  color: #81d4fa;
+  margin: 10px 0 20px;
+}
+.hero-text p {
+  max-width: 500px;
+  line-height: 1.6;
+  color: #ccc;
+}
+.hero-buttons a {
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+.btn { background: #4fc3f7; color: #111; }
+.btn-outline { border: 2px solid #4fc3f7; color: #4fc3f7; }
+.btn:hover { background: #81d4fa; color: #111; }
+.btn-outline:hover { background: #4fc3f7; color: #111; }
 
-// Skill & Project Hover Effects
-document.querySelectorAll(".skill-card").forEach(skill=>{
-    skill.addEventListener("mouseenter",()=>{ skill.style.boxShadow="0 0 20px #4fc3f7"; });
-    skill.addEventListener("mouseleave",()=>{ skill.style.boxShadow="none"; });
-});
-document.querySelectorAll(".project-card").forEach(card=>{
-    card.addEventListener("mousemove", e=>{
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width/2;
-        const y = e.clientY - rect.top - rect.height/2;
-        card.style.transform=`rotateY(${x/25}deg) rotateX(${-y/25}deg) scale(1.03)`;
-    });
-    card.addEventListener("mouseleave",()=>{ card.style.transform="rotateY(0) rotateX(0) scale(1)"; });
-});
+/* Hero Image */
+.hero-img {
+  width: 320px;
+  border-radius: 50%;
+  box-shadow: 0 0 40px #4fc3f7;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
 
+/* ================= SECTIONS ================= */
+section {
+  padding: 100px 80px;
+  text-align: center;
+}
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #4fc3f7, #81d4fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= TYPING EFFECT ================= */
+#typing-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  border-right: 3px solid #4fc3f7;
+  overflow: hidden;
+  margin: auto;
+  max-width: 700px;
+  animation: blinkCursor 0.7s steps(1) infinite;
+}
+@keyframes blinkCursor {
+  0%,50% { border-color: #4fc3f7; }
+  51%,100% { border-color: transparent; }
+}
+
+/* ================= SKILLS ================= */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 20px;
+}
+.skill-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.skill-card::after {
+  content: attr(data-skill);
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: #4fc3f7;
+  opacity: 0;
+  transition: 0.3s;
+}
+.skill-card:hover::after {
+  opacity: 1;
+}
+
+/* ================= PROJECTS ================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 30px;
+}
+.project-card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #4fc3f7;
+}
+
+/* ================= EDUCATION & TRAINING ================= */
+.edu-card, .train-card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  margin: auto;
+  max-width: 600px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.edu-card:hover, .train-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px #4fc3f7;
+}
+
+/* ================= CONTACT ================= */
+.contact a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* ================= LIGHT/DARK MODE ================= */
+body.light-mode { background:#f0f0f0; color:#111; }
+body.light-mode .navbar { background: rgba(255,255,255,0.85); }
+body.light-mode .navbar a { color:#0d47a1; }
+body.light-mode .navbar a.active::after, body.light-mode .navbar a:hover::after { background:#0d47a1; }
+body.light-mode .hero-text h1,h2 { background: linear-gradient(90deg,#0d47a1,#1976d2); -webkit-background-clip:text;-webkit-text-fill-color:transparent; }
+body.light-mode .skill-card { background:#e0e0e0; color:#111; }
+body.light-mode .project-card, body.light-mode .edu-card, body.light-mode .train-card { background:#e0e0e0; color:#111; }
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width:768px){
+  .hero { flex-direction: column; padding:120px 20px; gap:30px; }
+  .hero-img { width: 200px; }
+  section { padding:80px 20px; }
+}
