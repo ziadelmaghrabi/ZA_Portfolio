@@ -148,16 +148,22 @@ footer { background: #111; text-align: center; padding: 20px; }
     .navbar ul.active { display: flex; }
 
     /* Hero side-by-side on mobile */
-    .hero {
+     .hero {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start; /* بدل center */
         gap: 20px;  
         padding: 80px 20px;
     }
     .hero-text { max-width: 50%; }
-    .hero-img { width: 150px; max-width: 40%; }
+    .hero-img { 
+        width: 150px; 
+        max-width: 40%; 
+        margin-top: -20px; /* يرفع الصورة شويه فوق */
+    }
+    .hero-text { max-width: 50%; }
+   
     .hero-text h1 { font-size: 32px; }
     .hero-text h3 { font-size: 18px; }
     .hero-text p { font-size: 14px; }
@@ -165,6 +171,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
