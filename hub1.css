@@ -88,22 +88,15 @@ body {
 .btn-outline { border: 2px solid #4fc3f7; color: #4fc3f7; }
 .btn:hover { background: #81d4fa; transform: translateY(-3px); }
 .btn-outline:hover { background: #4fc3f7; color: #111; transform: translateY(-3px); }
-/* حاوية الصورة والزر */
-.hero-img-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px; /* مسافة بين الصورة والزر */
-}
 
-/* زر GitHub */
+ /* زر GitHub */
 .btn-github {
     display: inline-flex;
     align-items: center;
-    gap: 12px; /* مسافة بين الأيقونة والنص */
+    gap: 12px;
     padding: 12px 28px;
     border-radius: 12px;
-    background: #333; /* لون داكن للزر */
+    background: #333;
     color: #fff;
     font-weight: 700;
     font-size: 18px;
@@ -113,12 +106,11 @@ body {
 }
 
 .btn-github:hover {
-    background: #4fc3f7; /* أزرق فاتح عند Hover */
+    background: #4fc3f7;
     color: #111;
     transform: translateY(-3px);
 }
 
-/* أيقونة GitHub أكبر */
 .github-icon {
     width: 28px;
     height: 28px;
@@ -217,29 +209,39 @@ footer { background: #111; text-align: center; padding: 20px; }
     .navbar ul.active { display: flex; }
 
     /* Hero side-by-side on mobile */
-     .hero {
-        flex-direction: row;
+      .hero {
+        flex-direction: row; /* نص + صورة جنب بعض */
         flex-wrap: wrap;
         justify-content: center;
-        align-items: flex-start; /* بدل center */
+        align-items: flex-start;
         gap: 20px;  
         padding: 80px 20px;
     }
-    .hero-text { max-width: 50%; }
-    .hero-img { 
-        width: 200px; 
-        max-width: 60%; 
-        margin-top: -1px; /* يرفع الصورة شويه فوق */
+
+    .hero-text { 
+        max-width: 50%;
     }
-    .hero-text { max-width: 50%; }
-   
+
     .hero-text h1 { font-size: 32px; }
     .hero-text h3 { font-size: 18px; }
     .hero-text p { font-size: 14px; }
+
+    .hero-img { 
+        width: 150px; /* حجم معقول على الموبايل */
+        max-width: 50%;
+        margin-top: 0; /* الصورة في مستوى النص */
+    }
+
+    /* مسافة بين الأزرار */
+    .hero-buttons a {
+        display: block;
+        margin-top: 10px;
+    }
      
 
     section { padding: 80px 20px; }
 }
+
 
 
 
