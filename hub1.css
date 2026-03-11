@@ -104,10 +104,10 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
     position: relative;
     padding: 25px;
     border-radius: 12px;
-    background: #1a1a1a; /* لون المربع */
+    background: transparent; /* شفاف، يظهر خلفية الصفحة */
     overflow: hidden;
     transition: 0.3s;
-    z-index: 0; /* محتوى المربع فوق الخط */
+    z-index: 0;
 }
 
 .project-card * {
@@ -119,8 +119,8 @@ h1,h2 { background: linear-gradient(90deg,#4fc3f7,#81d4fa); -webkit-background-c
 .project-card::before {
     content: "";
     position: absolute;
-    top: -2px; left: -2px; right: -2px; bottom: -2px; /* حول المربع */
-    border-radius: 14px; /* أكبر من المربع عشان يظهر فوق الحواف */
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: 14px;
     padding: 2px;
     background: linear-gradient(120deg,#4fc3f7,#00ffff,#00ffcc,#4fc3f7);
     background-size: 300% 300%;
@@ -223,6 +223,7 @@ footer { background: #111; text-align: center; padding: 20px; }
 
     section { padding: 80px 20px; }
 }
+
 
 
 
