@@ -26,30 +26,37 @@ window.addEventListener("scroll", ()=>{
 
 // Typing Effect (About)
 const typingText = document.getElementById("typing-text");
-const text = `👋 Hi, I am Ziad Ayman, a passionate Computer Science student and Full Stack .NET Developer.<br>
-💻 I specialize in building scalable and responsive web applications with modern technologies.<br>
-🎨 On the front-end, I create interactive interfaces using HTML, CSS, JavaScript, and React.<br>
-⚙️ On the back-end, I develop robust solutions with C#, ASP.NET, and SQL.<br>
-🚀 I enjoy learning new technologies, solving complex problems, and contributing to impactful projects.`;
 
-let i = 0;
+ 
+const lines = [
+  "👋 Hi, I am Ziad Ayman, a passionate Computer Science student and Full Stack .NET Developer.",
+  "💻 I specialize in building scalable and responsive web applications with modern technologies.",
+  "🎨 On the front-end, I create interactive interfaces using HTML, CSS, JavaScript, and React.",
+  "⚙️ On the back-end, I develop robust solutions with C#, ASP.NET, and SQL.",
+  "🚀 I enjoy learning new technologies, solving complex problems, and contributing to impactful projects."
+];
+
+let lineIndex = 0;
+let charIndex = 0;
+
 function typeEffect() {
-    if (i < text.length) {
-        // لو بداية <br> ضيفها مرة واحدة بدل تفكيكها
-        if (text.substr(i, 4) === "<br>") {
-            typingText.innerHTML += "<br>";
-            i += 4; // نعدي على 4 أحرف
+    if (lineIndex < lines.length) {
+        if (charIndex < lines[lineIndex].length) {
+            typingText.innerHTML += lines[lineIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeEffect, 25);
         } else {
-            typingText.innerHTML += text.charAt(i);
-            i++;
+            // نهاية السطر، نضيف سطر جديد
+            typingText.innerHTML += "<br>";
+            lineIndex++;
+            charIndex = 0;
+            setTimeout(typeEffect, 200); // تأخير قصير قبل السطر الجديد
         }
-        setTimeout(typeEffect, 25);
     }
 }
 
 window.addEventListener("load", typeEffect);
-}
-window.addEventListener("load", typeEffect);
+ 
 
 // Hero Image 3D Effect (Desktop Only)
 const heroImg = document.querySelector(".hero-img");
@@ -121,6 +128,7 @@ document.querySelectorAll(".skill-card, .project-card").forEach(el=>{
 const menuToggle = document.querySelector(".menu-toggle");
 const navUl = document.querySelector(".navbar ul");
 menuToggle.addEventListener("click", ()=>{ navUl.classList.toggle("active"); });
+
 
 
 
