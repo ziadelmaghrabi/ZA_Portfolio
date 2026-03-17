@@ -239,9 +239,9 @@ footer { background: #111; text-align: center; padding: 20px; }
     .hero-text p { font-size: 14px; }
 
     .hero-img { 
-        width: 150px; /* حجم معقول على الموبايل */
+        width: 153px; /* حجم معقول على الموبايل */
         max-width: 50%;
-        margin-top: 1; /* الصورة في مستوى النص */
+        margin-top: 3; /* الصورة في مستوى النص */
     }
 
     /* مسافة بين الأزرار */
