@@ -1,24 +1,21 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ziad Ayman | Portfolio</title>
-<link rel="stylesheet" href="hub1.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hub1.css">
 </head>
-
 <body>
+
+<!-- Canvas background -->
+<canvas id="bg-canvas"></canvas>
 
 <!-- NAVBAR -->
 <nav class="navbar">
     <h2 class="logo">ZA</h2>
-    <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <div class="menu-toggle"><span></span><span></span><span></span></div>
     <ul>
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -36,21 +33,16 @@
         <h1>Ziad Ayman</h1>
         <h3>Full Stack .NET Developer</h3>
         <p>Computer Science student specializing in .NET development and passionate about building scalable web applications.</p>
-        
         <div class="hero-buttons">
             <a href="#contact" class="btn">Contact Me</a>
             <a href="cv_zeyadayman.pdf" class="btn-outline" download>Download CV</a>
             <a href="https://github.com/ziadelmaghrabi" target="_blank" class="btn-github">
-                <img src="https://images.seeklogo.com/logo-png/30/2/github-logo-png_seeklogo-304612.png" alt="GitHub" class="github-icon">
-                GitHub
+                <img src="https://images.seeklogo.com/logo-png/30/2/github-logo-png_seeklogo-304612.png" alt="GitHub" class="github-icon"> GitHub
             </a>
         </div>
     </div>
-
- 
     <img src="ph4.jpg" alt="Ziad Ayman" class="hero-img">
 </section>
-    
 
 <!-- ABOUT -->
 <section id="about" class="about">
@@ -59,9 +51,9 @@
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="skills">
+<section id="skills">
     <h2>Technical Skills</h2>
-    <div class="skills-grid">
+    <div class="skills-grid technical-skills">
         <div class="skill-card">C#</div>
         <div class="skill-card">JavaScript</div>
         <div class="skill-card">HTML</div>
@@ -70,49 +62,43 @@
         <div class="skill-card">.NET</div>
         <div class="skill-card">SQL</div>
         <div class="skill-card">Python</div>
-        <div class="skill-card">C++</div>
-        <div class="skill-card">Git & GitHub</div>
-            <div class="skill-card">MVC</div>
+    </div>
+
+    <h2><br> <br>Soft Skills</h2>
+    <div class="skills-grid soft-skills">
+        <div class="skill-card">Communication</div>
+        <div class="skill-card">Teamwork</div>
+        <div class="skill-card">Problem Solving</div>
+        <div class="skill-card">Leadership</div>
+        <div class="skill-card">Time Management</div>
+        <div class="skill-card">Creativity</div>
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="projects">
-    <h2>Projects</h2>
+    <h2>Projects <br></h2>
     <div class="projects-grid">
         <div class="project-card">
             <h3>AI River Crossing</h3>
             <p>Python application solving the Farmer–Wolf–Goat–Cabbage problem using BFS, DFS, and A* algorithms with a Tkinter GUI.</p>
-             <a href="https://github.com/ziadelmaghrabi/Farmer-Crossing-Ai.git" target="_blank" class="btn-outline">View Project</a>
+            <a href="https://github.com/ziadelmaghrabi/Farmer-Crossing-Ai.git" target="_blank" class="btn-outline">View Project</a>
         </div>
         <div class="project-card">
             <h3>Bank System</h3>
-            <p>Web application simulating banking operations like account creation, deposit, withdraw, and transfers using C#,LINQ and SQl.</p>
-        </div>
-         <div class="project-card">
-            <h3>Exam System</h3>
-            <p>Examination system built with C#: supports multiple question types, practice and final exams, answer logging, and event notifications for students.</p>
+            <p>Web application simulating banking operations like account creation, deposit, withdraw, and transfers using C#, LINQ and SQL.</p>
+            <a href="#" class="btn-outline">View Project</a>
         </div>
         <div class="project-card">
-    <h3>Islamic Reading Page</h3>
-    <p>A responsive web page focused on Quran reading and listening with interactive features like theme switch, verse audio, and bookmarks.</p>
-    <a href="https://ziadelmaghrabi.github.io/islamic/" target="_blank" class="btn-outline">View</a>
-</div>
-     
-    </div>
-</section>
-    <!-- NON-TECHNICAL SKILLS -->
-<section id="non-tech-skills" class="skills">
-    <h2>Soft Skills</h2>
-    <div class="skills-grid">
-        <div class="skill-card">Communication</div>
-        <div class="skill-card">Teamwork</div>
-        <div class="skill-card">Problem Solving</div>
-        <div class="skill-card">Critical Thinking</div>
-        <div class="skill-card">Time Management</div>
-        <div class="skill-card">Adaptability</div>
-        <div class="skill-card">Creativity</div>
-        <div class="skill-card">Leadership</div>
+            <h3>Exam System</h3>
+            <p>Examination system built with C#: supports multiple question types, practice and final exams, answer logging, and event notifications for students.</p>
+            <a href="#" class="btn-outline">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Islamic Reading Page</h3>
+            <p>A responsive web page focused on Quran reading and listening with interactive features like theme switch, verse audio, and bookmarks.</p>
+            <a href="https://ziadelmaghrabi.github.io/islamic/" target="_blank" class="btn-outline">View</a>
+        </div>
     </div>
 </section>
 
@@ -151,21 +137,3 @@
 <script src="hub1.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
