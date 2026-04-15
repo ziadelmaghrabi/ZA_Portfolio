@@ -1,28 +1,68 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ziad Ayman | Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="hub1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ziad Ayman - Full Stack .NET Developer specializing in building scalable web applications. Computer Science student with expertise in C#, ASP.NET, React, and SQL.">
+    <meta name="keywords" content="Full Stack Developer, .NET Developer, C#, ASP.NET, React, Web Development, Portfolio">
+    <meta name="author" content="Ziad Ayman">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ziad Ayman | Full Stack .NET Developer">
+    <meta property="og:description" content="Computer Science student specializing in .NET development and passionate about building scalable web applications.">
+    <meta property="og:type" content="website">
+    
+    <title>Ziad Ayman | Full Stack .NET Developer Portfolio</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="hub1.css">
 </head>
 <body>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <h2>Loading Portfolio...</h2>
+    </div>
+</div>
 
 <!-- Canvas background -->
 <canvas id="bg-canvas"></canvas>
 
+<!-- Theme Toggle -->
+<button id="theme-toggle" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+</button>
+
+<!-- Scroll to Top Button -->
+<button id="scroll-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <!-- NAVBAR -->
 <nav class="navbar">
-    <h2 class="logo">ZA</h2>
-    <div class="menu-toggle"><span></span><span></span><span></span></div>
+    <h2 class="logo">ZA<span class="dot">.</span></h2>
+    <div class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <ul>
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#training">Internships</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -30,108 +70,478 @@
 <!-- HERO -->
 <section id="home" class="hero">
     <div class="hero-text">
-        <h1>Ziad Ayman</h1>
-        <h3>Full Stack .NET Developer</h3>
-        <p>Computer Science student specializing in .NET development and passionate about building scalable web applications.</p>
+        <h1 class="glitch" data-text="Ziad Ayman">Ziad Ayman</h1>
+        <h3>Full Stack <span class="highlight">.NET Developer</span></h3>
+        <p>Computer Science student specializing in .NET development and passionate about building scalable, high-performance web applications.</p>
         <div class="hero-buttons">
-            <a href="#contact" class="btn">Contact Me</a>
-            <a href="cv_zeyadayman.pdf" class="btn-outline" download>Download CV</a>
-            <a href="https://github.com/ziadelmaghrabi" target="_blank" class="btn-github">
-                <img src="https://images.seeklogo.com/logo-png/30/2/github-logo-png_seeklogo-304612.png" alt="GitHub" class="github-icon"> GitHub
+            <a href="#contact" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+            <a href="#projects" class="btn btn-outline">
+                <i class="fas fa-briefcase"></i> View Work
+            </a>
+            <a href="https://github.com/ziadelmaghrabi" target="_blank" class="btn btn-github">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://github.com/ziadelmaghrabi" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/zeyad-ayman-077890298/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:ziad23016042@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
             </a>
         </div>
     </div>
-    <img src="ph5.jpeg" alt="Ziad Ayman" class="hero-img">
+    <div class="hero-image-container">
+        <div class="image-border"></div>
+        <img src="ph5.jpeg" alt="Ziad Ayman" class="hero-img">
+    </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="about">
-    <h2>About Me</h2>
-    <p id="typing-text"></p>
+    <div class="section-header">
+        <h2>About Me</h2>
+        <div class="underline"></div>
+    </div>
+    <div class="about-content">
+        <div class="typing-container">
+            <p id="typing-text"></p>
+            <span class="cursor">|</span>
+        </div>
+    </div>
+</section>
+
+<!-- STATISTICS -->
+<section id="stats" class="stats">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <i class="fas fa-code"></i>
+            <h3 class="counter" data-target="15">0</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-laptop-code"></i>
+            <h3 class="counter" data-target="8">0</h3>
+            <p>Technologies</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-clock"></i>
+            <h3 class="counter" data-target="500">0</h3>
+            <p>Hours of Coding</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-coffee"></i>
+            <h3 class="counter" data-target="1000">0</h3>
+            <p>Cups of Coffee</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+    <div class="section-header">
+        <h2>Services I Offer</h2>
+        <div class="underline"></div>
+        <p>Professional web development services tailored to your needs</p>
+    </div>
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Full Stack Development</h3>
+            <p>End-to-end web application development using .NET, C#, React, and modern technologies.</p>
+            <ul class="service-features">
+                <li><i class="fas fa-check"></i> Custom Web Applications</li>
+                <li><i class="fas fa-check"></i> API Development</li>
+                <li><i class="fas fa-check"></i> Database Design</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Responsive Design</h3>
+            <p>Creating beautiful, mobile-first websites that work seamlessly across all devices.</p>
+            <ul class="service-features">
+                <li><i class="fas fa-check"></i> Mobile Optimization</li>
+                <li><i class="fas fa-check"></i> Cross-Browser Compatible</li>
+                <li><i class="fas fa-check"></i> Performance Optimized</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <h3>Backend Development</h3>
+            <p>Robust server-side solutions with ASP.NET Core, Entity Framework, and SQL Server.</p>
+            <ul class="service-features">
+                <li><i class="fas fa-check"></i> RESTful APIs</li>
+                <li><i class="fas fa-check"></i> Database Management</li>
+                <li><i class="fas fa-check"></i> Security Implementation</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Intuitive and engaging user interfaces with modern design principles.</p>
+            <ul class="service-features">
+                <li><i class="fas fa-check"></i> User-Centered Design</li>
+                <li><i class="fas fa-check"></i> Interactive Prototypes</li>
+                <li><i class="fas fa-check"></i> Design Systems</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <h3>Website Maintenance</h3>
+            <p>Ongoing support, updates, and optimization to keep your site running smoothly.</p>
+            <ul class="service-features">
+                <li><i class="fas fa-check"></i> Bug Fixes</li>
+                <li><i class="fas fa-check"></i> Performance Tuning</li>
+                <li><i class="fas fa-check"></i> Security Updates</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Deployment & Hosting</h3>
+            <p>Complete deployment solutions with cloud hosting and CI/CD implementation.</p>
+            <ul class="service-features">
+                <li><i class="fas fa-check"></i> Cloud Deployment</li>
+                <li><i class="fas fa-check"></i> Domain Setup</li>
+                <li><i class="fas fa-check"></i> SSL Certificates</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid technical-skills">
-        <div class="skill-card">C#</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">HTML</div>
-        <div class="skill-card">CSS</div>
-        <div class="skill-card">React</div>
-        <div class="skill-card">.NET</div>
-        <div class="skill-card">SQL</div>
-        <div class="skill-card">Python</div>
+    <div class="section-header">
+        <h2>Technical Skills</h2>
+        <div class="underline"></div>
+    </div>
+    <div class="skills-container">
+        <div class="skills-category">
+            <h3><i class="fas fa-code"></i> Frontend Development</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-react"></i>
+                    <span>React</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skills-category">
+            <h3><i class="fas fa-server"></i> Backend Development</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-hashtag"></i>
+                    <span>C#</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>.NET</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <span>SQL</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h2><br> <br>Soft Skills</h2>
-    <div class="skills-grid soft-skills">
-        <div class="skill-card">Communication</div>
-        <div class="skill-card">Teamwork</div>
-        <div class="skill-card">Problem Solving</div>
-        <div class="skill-card">Leadership</div>
-        <div class="skill-card">Time Management</div>
-        <div class="skill-card">Creativity</div>
+    <div class="section-header" style="margin-top: 60px;">
+        <h2>Soft Skills</h2>
+        <div class="underline"></div>
+    </div>
+    <div class="soft-skills-grid">
+        <div class="soft-skill-card">
+            <i class="fas fa-comments"></i>
+            <h4>Communication</h4>
+        </div>
+        <div class="soft-skill-card">
+            <i class="fas fa-users"></i>
+            <h4>Teamwork</h4>
+        </div>
+        <div class="soft-skill-card">
+            <i class="fas fa-lightbulb"></i>
+            <h4>Problem Solving</h4>
+        </div>
+        <div class="soft-skill-card">
+            <i class="fas fa-user-tie"></i>
+            <h4>Leadership</h4>
+        </div>
+        <div class="soft-skill-card">
+            <i class="fas fa-clock"></i>
+            <h4>Time Management</h4>
+        </div>
+        <div class="soft-skill-card">
+            <i class="fas fa-palette"></i>
+            <h4>Creativity</h4>
+        </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="projects">
-    <h2>Projects <br></h2>
+    <div class="section-header">
+        <h2>Featured Projects</h2>
+        <div class="underline"></div>
+        <p>A showcase of my recent work and personal projects</p>
+    </div>
     <div class="projects-grid">
         <div class="project-card">
-            <h3>AI River Crossing</h3>
-            <p>Python application solving the Farmer–Wolf–Goat–Cabbage problem using BFS, DFS, and A* algorithms with a Tkinter GUI.</p>
-            <a href="https://github.com/ziadelmaghrabi/Farmer-Crossing-Ai.git" target="_blank" class="btn-outline">View Project</a>
+            <div class="project-image">
+                <img src="river.jfif" alt="AI River Crossing">
+                <div class="project-overlay">
+                    <a href="https://github.com/ziadelmaghrabi/Farmer-Crossing-Ai.git" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="project-content">
+                <h3>AI River Crossing</h3>
+                <p>Python application solving the Farmer–Wolf–Goat–Cabbage problem using BFS, DFS, and A* algorithms with a Tkinter GUI.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>AI</span>
+                    <span>Tkinter</span>
+                </div>
+                <a href="https://github.com/ziadelmaghrabi/Farmer-Crossing-Ai.git" target="_blank" class="btn-outline btn-small">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
         </div>
+        
         <div class="project-card">
-            <h3>Bank System</h3>
-            <p>Web application simulating banking operations like account creation, deposit, withdraw, and transfers using C#, LINQ and SQL.</p>
-            <a href="#" class="btn-outline">View Project</a>
+            <div class="project-image">
+                <img src="bank.jfif" alt="Bank System">
+                <div class="project-overlay">
+                    <a href="https://github.com/ziadelmaghrabi" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="project-content">
+                <h3>Bank System</h3>
+                <p>Web application simulating banking operations like account creation, deposit, withdraw, and transfers using C#, LINQ and SQL.</p>
+                <div class="project-tags">
+                    <span>C#</span>
+                    <span>SQL</span>
+                    <span>LINQ</span>
+                </div>
+                <a href="https://github.com/ziadelmaghrabi" target="_blank" class="btn-outline btn-small">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
         </div>
+        
         <div class="project-card">
-            <h3>Exam System</h3>
-            <p>Examination system built with C#: supports multiple question types, practice and final exams, answer logging, and event notifications for students.</p>
-            <a href="#" class="btn-outline">View Project</a>
+            <div class="project-image">
+                <img src="exam.png" alt="Exam System">
+                <div class="project-overlay">
+                    <a href="https://github.com/ziadelmaghrabi" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="project-content">
+                <h3>Exam System</h3>
+                <p>Examination system built with C#: supports multiple question types, practice and final exams, answer logging, and event notifications.</p>
+                <div class="project-tags">
+                    <span>C#</span>
+                    <span>.NET</span>
+                    <span>OOP</span>
+                </div>
+                <a href="https://github.com/ziadelmaghrabi" target="_blank" class="btn-outline btn-small">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
         </div>
+        
         <div class="project-card">
-            <h3>Islamic Reading Page</h3>
-            <p>A responsive web page focused on Quran reading and listening with interactive features like theme switch, verse audio, and bookmarks.</p>
-            <a href="https://ziadelmaghrabi.github.io/islamic/" target="_blank" class="btn-outline">View</a>
+            <div class="project-image">
+                <img src="islamic.jpg" alt="Islamic Reading Page">
+                <div class="project-overlay">
+                    <a href="https://ziadelmaghrabi.github.io/islamic/" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="project-content">
+                <h3>Islamic Reading Page</h3>
+                <p>A responsive web page focused on Quran reading and listening with interactive features like theme switch, verse audio, and bookmarks.</p>
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <a href="https://ziadelmaghrabi.github.io/islamic/" target="_blank" class="btn-outline btn-small">
+                    <i class="fas fa-eye"></i> View Live
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- EDUCATION -->
+<!-- EDUCATION & EXPERIENCE -->
 <section id="education" class="education">
-    <h2>Education</h2>
-    <div class="edu-card">
-        <h3>Bachelor of Computer Science</h3>
-        <p>Faculty of Computers and Information – 6th of October University</p>
-        <p>2023 – 2027</p>
+    <div class="section-header">
+        <h2>Education & Experience</h2>
+        <div class="underline"></div>
     </div>
-</section>
-
-<!-- TRAINING -->
-<section id="training" class="training">
-    <h2>Internships</h2>
-    <div class="train-card">
-        <h3>Digital Egypt Pioneers</h3>
-        <p>Full Stack .NET Training – learning ASP.NET, C#, SQL, and building real web applications.</p>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-content">
+                <h3>Bachelor of Computer Science</h3>
+                <h4>Faculty of Computers and Information – 6th of October University</h4>
+                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2023 – 2027</span>
+                <p>Studying Computer Science with focus on software development, algorithms, and data structures.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="timeline-content">
+                <h3>Full Stack .NET Training</h3>
+                <h4>Digital Egypt Pioneers Initiative</h4>
+                <span class="timeline-date"><i class="far fa-calendar-alt"></i> 2024</span>
+                <p>Intensive training program covering ASP.NET Core, Entity Framework, SQL Server, and modern web development practices.</p>
+                <ul class="timeline-list">
+                    <li>Built real-world web applications</li>
+                    <li>Learned MVC architecture and RESTful APIs</li>
+                    <li>Implemented authentication and authorization</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ziad23016042@gmail.com">ziad23016042@gmail.com</a></p>
-    <p>Phone: <a href="tel:01021577363">01021577363</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/zeyad-ayman-077890298/">Ziad Ayman</a></p>
+    <div class="section-header">
+        <h2>Get In Touch</h2>
+        <div class="underline"></div>
+        <p>Have a project in mind? Let's work together!</p>
+    </div>
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Email</h3>
+                    <a href="mailto:ziad23016042@gmail.com">ziad23016042@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Phone</h3>
+                    <a href="tel:+201021577363">+20 102 157 7363</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/zeyad-ayman-077890298/" target="_blank">Ziad Ayman</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/ziadelmaghrabi" target="_blank">@ziadelmaghrabi</a>
+                </div>
+            </div>
+        </div>
+        
+        <form class="contact-form" id="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                <i class="fas fa-tag"></i>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                <i class="fas fa-comment"></i>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+        </form>
+    </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 Ziad Ayman Portfolio</p>
+    <div class="footer-content">
+        <h2 class="logo">ZA<span class="dot">.</span></h2>
+        <p>Building the future, one line of code at a time.</p>
+        <div class="footer-social">
+            <a href="https://github.com/ziadelmaghrabi" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/zeyad-ayman-077890298/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:ziad23016042@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <p class="copyright">© 2026 Ziad Ayman. All Rights Reserved.</p>
+    </div>
 </footer>
 
 <script src="hub1.js"></script>
